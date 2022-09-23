@@ -1,0 +1,184 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Response" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="city_argument" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>687,1423</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Response_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Response" sap:VirtualizedContainerService.HintSize="594,1564" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="city_search" />
+      <Variable x:TypeArguments="x:String" Default="Tempo para " Name="search" />
+      <Variable x:TypeArguments="x:String" Name="temp" />
+      <Variable x:TypeArguments="x:String" Default="Resultados da Pesquisa para " Name="msg" />
+      <Variable x:TypeArguments="x:String" Name="clima" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[city_search]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[city_argument]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'chrome.exe  Google'" FileName="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="552,1248" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="ff6f2bc77cb01941d20d28c04c1abbdf" Selector="&lt;html app='chrome.exe' title='Google' /&gt;">
+      <ui:OpenApplication.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="518,1102" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1010" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="434,918" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="e2c7f313-9302-4bfc-b274-b878d294ebbd" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,702" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="e2c7f313-9302-4bfc-b274-b878d294ebbd" Text="[search+city_search + &quot;[k(enter)]&quot;]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.google.com.br/?gws_rd=ssl" DesignTimeRectangle="240, 341, 443, 34" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='gLFyf gsfi' aaname='Pesquisar' /&gt;" Guid="4253bdf2-2115-49b7-9f69-3fbf00476cef" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAb8AAAAmCAYAAABUDZVNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACwSURBVHhe7dVBEcAwDMCwUgl/kNlnVxC19DIDnwWAGPMDIMf8AMgxPwByzA+AHPMDIMf8AMgxPwByzA+AHPMDIOfOb2b+AoC3mR8AOeYHQI75AZBjfgDkmB8AOeYHQI75AZBjfgDkmB8AOeYHQI75AZBjfgDkmB8AOeYHQI75AZBjfgDk3PkBQIX5AZBjfgDkmB8AOeYHQI75AZBjfgDkmB8AOeYHQI75AZBjfgDE7H4mNUHX3E12pQAAAABJRU5ErkJggg==" InformativeScreenshot="02904277ae087cac59f5857fb85c88b3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="207, 348, 20, 20" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVEhL7ZFNCoNADEZ7/yN01Y0n6KaLXkGQHqLiKVI+4YHoZJLRuvNBYPAnL/nmZidzCUJCwXecrB8+c+nciitQs+frbfdHt6kWigI1pxmTs0mrpChgci8SvdM3GTYCpveai5YtdgmIKkMxouhnhsjgCmoZc0cZXIGqFBPx7L5kQKKGFJPzPIMrEEy7LBrrnNmiKgBFtY4LeSRJCTwykkMCEUkOC4Qk3M2avwhqXIKQkwVmP37RuZboJV4aAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NGetText DisplayName="Get Text 'Temperatura'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="e2c7f313-9302-4bfc-b274-b878d294ebbd" ScrapingMethod="Fulltext" Version="V1">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=previs%C3%A3o+do+tempo+dois+irm%C3%A3os&amp;hl=pt-PT&amp;sxsrf=ALiCzsYkTzpFasRDhOFW_u4yimYrFHRzVw%3A1663945582859&amp;source=hp&amp;ei=bsstY9DYML761sQPmMeMMA&amp;iflsig=AJiK0e8AAAAAYy3ZflG30dHl35qJGl63335VICNjm4Kz&amp;ved=0ahUKEwjQx42rmKv6AhU-vZUCHZgjAwYQ4dUDCAc&amp;uact=5&amp;oq=previs%C3%A3o+do+tempo+dois+irm%C3%A3os&amp;gs_lp=Egdnd3Mtd2l6uAED-AEBMgwQIxgnGJ0CGEYYgAIyBBAjGCcyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGB4YFjIGEAAYHhgWMgYQABgeGBYyBhAAGB4YFjIGEAAYHhgWwgIHECMY6gIYJ8ICBxAjGCcYnQLCAgQQABhDwgIHEC4Y1AIYQ8ICCxAuGIAEGMcBGK8BwgIIEAAYgAQYyQPCAgUQABiSA8ICBRAAGMsBqAIKSLLoAVDivwFYkucBcAJ4AMgBAJABApgBgAOgAdohqgEIMC4yNy4wLjI&amp;sclient=gws-wiz" DesignTimeRectangle="258, 336, 45, 60" ElementType="Text" FriendlyName="'16'" FullSelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' type='' class='wob_t q8U8x' /&gt;" Guid="41ff69f1-a961-41dd-ab0a-051640be5802" InformativeScreenshot="c7a9159a9a43c0ef2a25f959dcbcfb85.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='previsão do tempo dois irmãos - Pesquisa Google' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="188, 414, 79, 29" ElementType="Text" FriendlyName="'Temperatura'" FullSelectorArgument="&lt;webctrl aria-role='button' id='wob_temp' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' id='wob_temp' tag='DIV' type='' class='ksb ksbs' aaname='Temperatura' check:innerText='Temperatura' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAhCAYAAAClWJfKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVGhD7ZVRasMwDEB3lBZ2jF0m0KuEXCU0d9gFSnuNQo6wHy22JUdWnNrN1G4demBYLFuSX5zuDQw1TKYiJlMRk6mIyVTEZCpiMhUxmYpEmefuHXb7tXGA/ooLX5FTB7vmCCM+Por8zXxS8afx92SO0DfstvL49QjNvoOz20fx7oLztGeK4/JxOPg4/xraEwYRvybu5V/GBdopV09x6oPX9gPrJfNhztd1/RG+z7mGi7cD9Y7za/kZlTKDyGaYZ5KGSJp8jgXT/SQq5sP1JNTHeX1/EMrlZLJaDh+XwtkacZ4amYmsUn6kTqZ89riEWEA0k5NPtzH+LfLNB2R5GS4e8oWDyJssSYRtkSlESXJrqmSmnxwft2XyAy9kikaiYLyluXpFmXIv1dCSuZYfqZfJnheoy+S5JBmZ7JA0nwj5qcxSfqT+M8/84Ea2yBQvZ26u9Bkv47mXoymzmB+56x9QspkL3iKTCxH7Q5y/PC5wRSbrl/LHfsV5ZH4vpiTzVn6kUqYjHMIn8YMddtPN7KB1Lwjz8bWOcMBcPHdz8WXT+qlOKox6px7T9e3JxddllvMH8jIfTJApX9brYzIVMZmK/IrM/4rJVMRkKmIyFTGZiphMRUymIlHm1+eHjY2DMJkKgzCZCoOw30xFTKYaAN+kVWKiZtiixwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NGetText.Target>
+                        <uix:NGetText.Text>
+                          <OutArgument x:TypeArguments="x:String">[temp]</OutArgument>
+                        </uix:NGetText.Text>
+                      </uix:NGetText>
+                      <uix:NGetText DisplayName="Get Text 'Céu limpo'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="e2c7f313-9302-4bfc-b274-b878d294ebbd" Version="V1">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=tempo+para+dois+irm%C3%A3os&amp;hl=pt-PT&amp;sxsrf=ALiCzsa9NW88_kessjdJKgx4f2aE7UahLA%3A1663945867709&amp;ei=i8wtY_TxKsfx1sQPjOCI-A4&amp;ved=0ahUKEwi04_qymav6AhXHuJUCHQwwAu8Q4dUDCA4&amp;uact=5&amp;oq=tempo+para+dois+irm%C3%A3os&amp;gs_lp=Egdnd3Mtd2l6uAED-AEBMgUQABiABDIFEAAYgAQyBBAAGB4yBhAAGB4YBTIGEAAYHhgFMgYQABgeGAUyCBAAGB4YBxgFMgYQABgeGAUyBhAAGB4YBTIIEAAYHhgHGAXCAgoQABhHGNYEGLADwgIHEAAYsAMYQ8ICBhAAGB4YB8ICBBAAGA2QBgpIhA9Q8QdYrQ1wAngByAEAkAEAmAGLAaABnwWqAQMwLjXiAwQgQRgA4gMEIEYYAIgGAQ&amp;sclient=gws-wiz" DesignTimeRectangle="768, 285, 72, 17" ElementType="Text" FriendlyName="'Céu limpo'" FullSelectorArgument="&lt;webctrl id='wob_dc' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_dc' tag='SPAN' type='' class='' /&gt;" Guid="5fe83cb5-2fd3-4361-8d8c-a2545d74a0d5" InformativeScreenshot="e64542894b770841db688acf41513115.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='tempo para dois irmãos - Pesquisa Google' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                        </uix:NGetText.Target>
+                        <uix:NGetText.Text>
+                          <OutArgument x:TypeArguments="x:String">[clima]</OutArgument>
+                        </uix:NGetText.Text>
+                      </uix:NGetText>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="1912, 188, 1382, 754" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="dfdce80d6e13ee7700b10936561bf1d9.png" Selector="&lt;html app='chrome.exe' title='Google' /&gt;" Url="https://www.google.com.br/?gws_rd=ssl" />
+                </uix:NApplicationCard.TargetApp>
+              </uix:NApplicationCard>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Search" sap:VirtualizedContainerService.HintSize="552,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[msg+city_search+Environment.NewLine+&quot;Temperatura Atual: &quot;+temp+&quot; ºC&quot;+Environment.NewLine+&quot;Tempo: &quot;+clima]" />
+  </Sequence>
+</Activity>
